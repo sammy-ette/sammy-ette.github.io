@@ -1,5 +1,4 @@
-# torchedsammy.github.io
-It's just my personal website. Link here: https://sammy.is-a.dev/
+yeah, its a website alright.
 
 # License
 My website is MIT Licensed.  
