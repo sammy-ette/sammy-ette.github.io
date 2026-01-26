@@ -166,9 +166,9 @@ fn nav(attrs: List(attribute.Attribute(a))) {
     [
       html.a([attribute.href("/")], [element.text("home")]),
       html.a([attribute.href("/blog")], [element.text("blog")]),
-      html.a([attribute.href("/hire-me"), attribute.class("font-bold")], [
-        element.text("hire me!"),
-      ]),
+      // html.a([attribute.href("/hire-me"), attribute.class("font-bold")], [
+    //   element.text("hire me!"),
+    // ]),
     ],
   )
 }
