@@ -1,5 +1,5 @@
-# Sample workflow for building and deploying a Hugo site to GitHub Pages
-name: Deploy Hugo site to Pages
+# Workflow for building and deploying the site (Gleam + Blogatto) to GitHub Pages
+name: Deploy site to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -29,25 +29,32 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.99.0
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install JS dependencies
+        run: bun install
+
+      - name: Build CSS
+        run: bun run build:css
+
+      - name: Setup Erlang & Gleam
+        uses: erlef/setup-beam@v1
         with:
-          submodules: recursive
+          otp-version: "27"
+          gleam-version: "1.16.0"
+
+      - name: Build site
+        run: gleam run
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v1
-      - name: Build with Hugo
-        run: |
-          hugo \
-            --minify \
-            --baseURL ${{ steps.pages.outputs.base_url }}
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
