@@ -11,11 +11,8 @@ pub fn main() {
     |> dev.before_build(fn() {
       case
         shellout.command(
-          run: "tailwindcss",
-          with: [
-            "-i", "./styles/input.css", "-o", "./static/tailwind.css",
-            "--minify",
-          ],
+          run: "bun",
+          with: ["run", "build:css"],
           in: ".",
           opt: [],
         )
