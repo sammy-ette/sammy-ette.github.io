@@ -37,7 +37,7 @@ jobs:
         uses: oven-sh/setup-bun@v2
 
       - name: Install JS dependencies
-        run: bun install -g tailwindcss @tailwindcss/cli
+        run: bun install --frozen-lockfile
 
       - name: Build CSS
         run: bun run build:css
