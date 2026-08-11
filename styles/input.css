@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: oklch(0.17 0.035 285);
+  --color-ink-2: oklch(0.14 0.03 285);
+  --color-ink-3: oklch(0.13 0.028 285);
+  --color-surface: oklch(0.2 0.038 285);
+  --color-surface-2: oklch(0.22 0.04 285);
+  --color-border: oklch(0.28 0.04 285);
+  --color-border-soft: oklch(0.24 0.035 285);
+  --color-border-strong: oklch(0.32 0.045 285);
+  --color-border-avatar: oklch(0.34 0.045 285);
+
+  --color-cream: oklch(0.93 0.02 85);
+  --color-body: oklch(0.9 0.02 85);
+  --color-muted: oklch(0.68 0.03 85);
+  --color-muted-2: oklch(0.72 0.03 85);
+  --color-accent: oklch(0.74 0.1 288);
+
+  --color-tag-coding: oklch(0.62 0.14 288);
+  --color-tag-games: oklch(0.62 0.17 258);
+  --color-tag-life: oklch(0.82 0.05 75);
+
+  --color-paper: oklch(0.88 0.025 80);
+  --color-paper-ink: oklch(0.22 0.03 285);
+
+  --font-serif: "DM Serif Display", serif;
+  --font-sans: "Work Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 24s linear infinite;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-cream);
+}
