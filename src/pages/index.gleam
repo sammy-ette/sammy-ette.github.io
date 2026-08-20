@@ -83,6 +83,7 @@ pub fn page(posts: List(Post(Nil))) -> Element(Nil) {
         [attribute.class("flex-1 min-w-0 flex flex-wrap content-start gap-3")],
         [
           web_button("/buttons/sammyette.png", "", "my web button"),
+          web_button("https://webb.is-a.dev/8831.png", "https://webb.is-a.dev/", "iris web button"),
           web_button(
             "https://highway.eightyeightthirty.one/badge/b74bd1a92112547b96015f56e01a26b565fde25a33897ca3917b9f6d0eb6702e",
             "https://gleam.run",
