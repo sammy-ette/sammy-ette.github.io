@@ -40,7 +40,7 @@ pub fn page(posts: List(Post(Nil))) -> Element(Nil) {
           html.div(
             [attribute.class("font-mono text-xs text-tag-coding mt-3.5")],
             [
-              element.text("currently: rewriting this website (again)"),
+              element.text("currently: grinding for a new pc"),
             ],
           ),
           html.div(
